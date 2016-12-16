@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Post {{ post.title }}
+{% endblock %}
+
+{% block title_visible %}
+    {{ post.title }}
+{% endblock %}
+
+{% block body %}
+    {{ post.text }}
+{% endblock %}

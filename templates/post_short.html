@@ -1,0 +1,5 @@
+{% with id=post.id %}
+<h2><a href="{% url 'post' id=id %}">{{ post.title }}</a></h2>
+<p>{{ post.description }}</p>
+<p><a class="btn btn-secondary" href="{% url 'post' id=post.id %}" role="button"> &rarr; </a></p>
+{%  endwith %}

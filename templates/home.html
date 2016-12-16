@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Home page
+{% endblock %}
+
+{% block title_visible %}
+    Home
+{% endblock %}
+
+
+{% block body %}
+    {% for p in posts %}
+        {% if p.id|divisibleby:2 %}
+            <div class="row">
+        {% endif %}
+    <div class="col-md-6">
+        {% include 'post_short.html' with post=p %}
+    </div>
+    {% if p.id|divisibleby:2 or forloop.last %}
+        </div>
+    {% endif %}
+
+    {% empty %}
+        The list is empty.
+    {% endfor %}
+
+{% endblock %}
